@@ -1,7 +1,7 @@
 import random
 rand = random.Random()
 n = rand.randint(1, 101)
-table = []
+table = [] # Только если нужно ваывести список монеток
 count_zero = 0
 count_one = 0
 for i in range(n):
