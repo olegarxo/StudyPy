@@ -7,7 +7,7 @@ def Read_file(open_file):   #Читает первую строку и запи�
     with open(open_file, 'r+') as f:
         text = f.readline()
     return text
-def Dict_numdeg_val(sum_list):   #
+def Dict_numdeg_val(sum_list):   #основная магия
     degree_val = { }
     flag = True
     for i in sum_list:
@@ -62,20 +62,13 @@ open_file1 = 'f1.txt' #input(('Вставьте имя первого файла
 open_file2 = 'f2.txt'   #input(('Вставьте имя первого файла из папки : '))
 text_one = Read_file(open_file1)
 text_two = Read_file(open_file2)
-print(text_one)
-print(text_two)
 new_text_one = ListNum(text_one)
 new_text_two = ListNum(text_two)
-print(new_text_one)
-print(new_text_two)
 new_dic_one = Dict_numdeg_val(new_text_one)
 new_dyc_two = Dict_numdeg_val(new_text_two)
-print(new_dic_one)
-print(new_dyc_two)
 if len(new_text_two) > len(new_text_one):
     tamp = Sum_dict(new_dyc_two, new_dic_one)
 else:
     tamp = Sum_dict(new_dic_one, new_dyc_two)
-print(tamp)
 print(Reade_funk(tamp))
 exit()
