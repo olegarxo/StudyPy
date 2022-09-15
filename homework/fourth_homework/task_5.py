@@ -50,7 +50,14 @@ def Sum_dict(item_one, item_two):
     for key, value in item_one.items():
         item_one[key] = value + item_two.get(key, 0)
     return item_one
-
+def Reade_funk(item_one):
+    with open('f3.txt', 'w+') as f:
+        for key, value in item_one.items():
+            if key == 0:
+                f.write(f'{value}')
+                f.write('= 0')
+            else:
+                f.write(f'{value}x^{key} + ')
 open_file1 = 'f1.txt' #input(('Вставьте имя первого файла из папки : '))
 open_file2 = 'f2.txt'   #input(('Вставьте имя первого файла из папки : '))
 text_one = Read_file(open_file1)
@@ -70,4 +77,5 @@ if len(new_text_two) > len(new_text_one):
 else:
     tamp = Sum_dict(new_dic_one, new_dyc_two)
 print(tamp)
+print(Reade_funk(tamp))
 exit()
