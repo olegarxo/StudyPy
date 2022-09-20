@@ -54,34 +54,38 @@ def Check_winner(field): #
             result = [flag_x, tamp_x]
             return result
         i += 1
-    for i in range(0, 3):
-        count_0 = 0
-        count_x = 0
+    count_0 = 0
+    count_x = 0
+    while not flag_0 and i < 3:
+        if field[i][i] == tamp_0:
+            count_0 += 1
+        elif field[i][i] == tamp_x:
+            count_x += 1
+        if count_0 == 3:
+            result = [True, tamp_0]
+            flag_0 = True
+            return result
+        elif count_x == 3:
+            result = [True, tamp_x]
+            flag_0 = True
+            return result
+        i += 1
+    count_0 = 0
+    count_x = 0
+    i = 2
+    while not flag_0 and i > -1:
+        if field[i][i] == tamp_0:
+            count_0 += 1
+        elif field[i][i] == tamp_x:
+            count_x += 1
         if count_0 == 3:
             result = [True, tamp_0]
             return result
         elif count_x == 3:
             result = [True, tamp_x]
             return result
-        elif field[i][i] == tamp_0:
-            count_0 += 1
-        elif field[i][i] == tamp_x:
-            count_x += 1
-    for i in range(2, -1, -1):
-        count_0 = 0
-        count_x = 0
-        if count_0 == 3:
-            result = [True, tamp_0]
-            return result
-        elif count_x == 3:
-            result = [True, tamp_x]
-            return result
-        elif field[i][i] == tamp_0:
-            count_0 += 1
-        elif field[i][i] == tamp_x:
-            count_x += 1
-        result = [False, ]
-        return result
+        i -= 1
+    return [False, ]
 def Enter_number(field, count): #Заполнение
     number = None
     if count % 2 == 0:
@@ -110,9 +114,9 @@ if random_number == 0:
 else:
     count = 2
     print(f'Ходит {count}-й игрок')
-field = ["*","*","*"], \
-        ["*","*","*"], \
-        ["*","*","*"]
+field = ["*", "*", "*"], \
+        ["*", "*", "*"], \
+        ["*", "*", "*"]
 Write_field(field)
 while not win:
     if count % 2 == 0:
