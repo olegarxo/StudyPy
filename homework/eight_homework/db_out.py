@@ -21,4 +21,4 @@ def Out_teachers():
     [print(*row, sep='\t', end='\t') for row in cursorObj.fetchall()]
 
 
-Out_teachers()
+
