@@ -2,8 +2,9 @@ from telegram import Bot, Update
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, ConversationHandler
 from random import randint as rd
 from comand import *
-bot = Bot(token='5767488864:AAGCvEygDRnhXvfOs9Rf8NAndTxArryjgo4')
-updater = Updater(token='5767488864:AAGCvEygDRnhXvfOs9Rf8NAndTxArryjgo4')
+
+bot = Bot(token='')
+updater = Updater(token='')
 dispatcher = updater.dispatcher
 
 
@@ -18,7 +19,7 @@ end = MessageHandler(Filters.all, end_game)
 Game = ConversationHandler(entry_points=[start_handler],
                            states={A: [gamer_move], B: [bot_move]},
                            fallbacks=[end])
-                         
+
 
 # dispatcher.add_handler(start_handler)s
 dispatcher.add_handler(del_abv)
